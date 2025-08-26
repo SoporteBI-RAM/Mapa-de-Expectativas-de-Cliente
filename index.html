@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Expectativas de Cliente</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>Mapa de Expectativas de Cliente</h1>
+            <p>Ajusta los pesos de cada frase para definir la orientación del proyecto y visualizar el entregable esperado.</p>
+            <p class="header-instruction">(0 = No es importante, 10 = Muy importante)</p>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="tab-x">Paso 1: Eje X (Precio vs. Valor Agregado)</button>
+            <button class="tab-btn" data-tab="tab-y">Paso 2: Eje Y (Practicidad vs. Estrategia)</button>
+            <button class="tab-btn" data-tab="tab-results">Paso 3: Resultado Final</button>
+        </nav>
+
+        <main id="main-content">
+            <div id="tab-x" class="tab-content active">
+                <div class="tab-grid-layout">
+                    <div class="questions-column">
+                        <div id="axis-x-container"></div>
+                        <button id="to-step-2-btn" class="step-nav-btn">Pasar al Paso 2: Eje Y (Practicidad vs. Estrategia)</button>
+                    </div>
+                    <div class="chart-column">
+                        <h2>Resumen Eje X</h2>
+                        <div class="chart-wrapper">
+                            <canvas id="axisXChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-y" class="tab-content">
+                <div class="tab-grid-layout">
+                    <div class="questions-column">
+                        <div id="axis-y-container"></div>
+                        <button id="to-step-3-btn" class="step-nav-btn">Pasar al Paso 3: Resultado Final</button>
+                    </div>
+                    <div class="chart-column">
+                        <h2>Resumen Eje Y</h2>
+                        <div class="chart-wrapper">
+                            <canvas id="axisYChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab-results" class="tab-content">
+                <div class="results-container">
+                    <div class="chart-container">
+                        <h2>Gráfico de Orientación General</h2>
+                        <div class="chart-wrapper">
+                            <canvas id="orientationChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <h2>Matriz de Posicionamiento</h2>
+                        <div class="chart-wrapper">
+                            <canvas id="positioningMatrixChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="summary-container full-width">
+                        <h2>Resumen del Entregable</h2>
+                        <div id="summary-text"></div>
+                        <button id="export-pdf-btn">Exportar a PDF</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Creado por Analítica RAM ®</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
