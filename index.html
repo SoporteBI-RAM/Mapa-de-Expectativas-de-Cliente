@@ -769,7 +769,7 @@
                         <div class="summary-container full-width">
                             <h2>Resumen del Entregable</h2>
                             <div id="summary-text"></div>
-                            <button id="send-data-btn" class="send-data-btn">Enviar a Google Sheets</button>
+                            <button id="send-data-btn" class="send-data-btn">Enviar Solicitud</button>
                         </div>
                     </div>
                 </div>
@@ -1533,7 +1533,7 @@
                     body: JSON.stringify(payload)
                 });
 
-                alert('Datos enviados a Google Sheets y email enviado correctamente!');
+                alert('Datos enviados e email enviado correctamente!');
                 btn.textContent = 'Enviado ✓';
                 setTimeout(() => {
                     btn.textContent = 'Enviar a Google Sheets';
